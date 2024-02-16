@@ -7,7 +7,7 @@ const volunteerSchema = new mongoose.Schema(
       required: true,
     },
     contact: {
-      type: Number,
+      type: String,
       required: true,
     },
     skills: {
@@ -22,11 +22,12 @@ const volunteerSchema = new mongoose.Schema(
       type: String,
       required: true,
     },
-    events: {
-      type: mongoose.Schema.Types.ObjectId,
-      ref: "Event",
-      required: true,
-    },
+    events: [
+      {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "Event",
+      },
+    ],
   },
   {
     timestamps: true,
